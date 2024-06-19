@@ -1,0 +1,47 @@
+.chat-details-header {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1px solid rgb(192, 192, 192);
+}
+
+.chat-header-title {
+  font-weight: 700;
+  font-size: large;
+  cursor: default;
+}
+
+.chat-details-sec-border {
+  border-bottom: 0.1px solid rgb(207, 207, 207);
+}
+
+.chat-profile-settings {
+  background-color: white;
+  bottom: -14px;
+  right: -8px;
+}
+
+.chat-name-style {
+  font-weight: 700;
+  font-size: larger;
+  cursor: default;
+}
+
+.chat-details-title {
+  font-weight: 700;
+  font-size: medium;
+  cursor: default;
+}
+
+.chat-description {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.chat-members {
+  width: 15px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px;
+}

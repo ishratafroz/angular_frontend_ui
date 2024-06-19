@@ -1,0 +1,38 @@
+/* .chat-details-header {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1px solid rgb(192, 192, 192);
+}
+
+.chat-header-title {
+  font-weight: 700;
+  font-size: large;
+  cursor: default;
+}
+
+.media-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.link-item {
+  border-radius: 20px;
+  background-color: rgb(201, 201, 201);
+  height: 95px;
+}
+
+.link-title {
+  font-size: medium;
+  font-weight: 600;
+}
+
+.link-desc {
+  font-size: small;
+  font-weight: 400;
+} */

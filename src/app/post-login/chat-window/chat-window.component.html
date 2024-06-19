@@ -1,0 +1,51 @@
+<div class="d-flex flex-col flex-grow">
+    <!-- header of chat -->
+    <div class="chat-header header-common-style">
+        <div class="d-flex justify-between pointer" (click)="chatDetailsBtnClick()">
+            <div class="d-flex flex-col justify-center">
+                <img [src]=headerInfo.profile height="45px" width="35px" alt="grpImage" class="round">
+            </div>
+            <div class="d-flex flex-col justify-center">
+                <div class="ml-1 chat-header-title">
+                    {{headerInfo.chatGrpName}}
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="icon-padding pointer" [src]="headerInfo.videocall" height="25px" />
+            <img class="icon-padding pointer" [src]="headerInfo.settings" (click)="chatDetailsBtnClick()" height="25px" />
+        </div>
+    </div>
+    
+           
+    <!-- content of chat -->
+    <div class="chat-body hidden-scroll" id="chat-container">
+        <div *ngFor="let messages of messages" #messageItem>
+            <div class="chat-message">
+                <div class="d-flex" [ngClass]="{'justify-content-end': messages.type == 'user', 'justify-content-start': messages.type != 'user'}">           
+                    <div class="">
+                        <img src="assets/images/userimg.svg" height="18px" width="18px" />
+                    </div>
+                    <div class="ml-1 chat-sender">{{messages.username}}</div>
+                    <div class="ml-1">{{messages.time}}</div>
+                </div>
+                <div id="message-content" [ngClass]="['ml-1','message', messages.type == 'user' ? 'user' : 'sender']">
+                    <div>{{messages.content}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input area of chat -->
+    <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Type your message..." (input)="updateTextField($event)"
+            (keyup.enter)="sendMessage($event)" />
+        <!-- <div class="round" id="attach-button" (click)="mediaBtnClick()">
+            <img class="icon-padding" id="attach-icon" [src]="inputAssets.attachBtn" height="25px" />
+        </div> -->
+        <div class="round" id="send-button" (click)="sendMessage($event)">
+            <img class="icon-padding" id="send-icon" [src]="inputAssets.sendBtn" height="25px" />
+        </div>
+
+    </div>
+</div>

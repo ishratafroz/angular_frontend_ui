@@ -1,0 +1,27 @@
+<div class="inbox_people">
+    <div class="sidebar">
+    <div class="headind_srch ">
+        <div class="recent_heading">
+            <h4 class="text-black">Connected Users</h4>
+        </div>
+        <div class="srch_bar">
+            <div class="stylish-input-group">
+                <input type="text" class="search-bar" id="search-bar" placeholder="Search" (input)="filterUsers()">
+                <!-- <span class="input-group-addon">
+                    <button type="button" (click)="filterUsers()"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                </span> -->
+            </div>
+        </div>
+    </div>
+    <div class="inbox_chat">
+        <div class="chat_list" *ngFor="let user of filteredUsers">
+            <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="{{ user.name }}"> </div>
+                <div class="chat_ib mt-3">
+                    <h5 class="d-flex justify-content-between align-items-center">{{ user.name }}<span class="online" *ngIf="user.online"></span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

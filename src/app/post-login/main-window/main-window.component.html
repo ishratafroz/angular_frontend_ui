@@ -1,0 +1,21 @@
+<div class="d-flex w-100 ">
+    <app-custom-card class="w-25  mr-2" [height]="50">
+        <app-chat-users-list></app-chat-users-list>
+    </app-custom-card>
+
+    <app-custom-card [height]="50" class="flex-grow">
+        <app-chat-window class="d-flex flex-grow" [onMediaClick]="setShowMediaDetails"
+            [onChatDetailsClick]="setShowChatDetails"></app-chat-window>  
+          
+    </app-custom-card>
+  
+
+    <!-- <div class="d-flex flex-col justify-between w-25 ml-2 mr-1" *ngIf="showChatDetails || showMediaDetails">
+        <app-custom-card *ngIf="showChatDetails" [height]="25">
+            <app-chat-detail-window class="w-100" [onClose]="setShowChatDetails"></app-chat-detail-window>
+        </app-custom-card>
+        <app-custom-card *ngIf="showMediaDetails" [height]="showChatDetails ? 24 : 50">
+            <app-chat-media-window class="w-100" [onClose]="setShowMediaDetails"></app-chat-media-window>
+        </app-custom-card>
+    </div> -->
+</div>

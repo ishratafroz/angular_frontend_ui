@@ -1,0 +1,19 @@
+.tab-sec {
+  border-radius: 25px;
+  background-color: #e7e7e7;
+  width: auto;
+}
+
+.tab-option {
+  border-radius: 25px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgb(153, 153, 153);
+}
+
+.selected-tab {
+  background-color: #ffff;
+  cursor: default;
+  color: skyblue;
+}

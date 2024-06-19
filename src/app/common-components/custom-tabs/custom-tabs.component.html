@@ -1,0 +1,8 @@
+<div class="d-flex justify-between tab-sec m-3">
+    <div [ngClass]="['m-1', 'tab-option', selectedTab === tab ? 'selected-tab' : '']" *ngFor="let tab of tabs" (click)="tabClick(tab)">
+        <div class="text-center">
+            {{tab}}
+        </div>
+    </div>
+</div>
+

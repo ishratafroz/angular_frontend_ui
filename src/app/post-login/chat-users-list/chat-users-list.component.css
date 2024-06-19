@@ -1,0 +1,125 @@
+.inbox_people {
+    background-color: whitesmoke;
+    background-image: linear-gradient(180deg, whitesmoke 25%, whitesmoke 100%);
+    float: left;
+   
+    width: 100%;
+    border-right: 1px solid #c4c4c4;
+    overflow-y: auto;
+   /* Ensure the whole section is fixed */
+  top: 0;
+  bottom: 0; /* Stretch to the bottom of the viewport */
+  position: relative; /* Ensure that child elements are positioned relative to this container */
+  }
+.sidebar {
+  background-color: whitesmoke;
+  width: 370px; /* Adjust the width as needed */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #c4c4c4;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+.highlight {
+  background-color: yellow;
+  display: inline;
+}
+
+  .headind_srch {
+    padding: 10px 29px 10px 35px;
+    overflow: hidden;
+    border-bottom: 1px solid #c4c4c4;
+    position: fixed;
+    background-color: white;
+    /* top: 0;
+    width: 100%;
+    z-index: 1; */   
+  }
+
+  .recent_heading h4 {
+    color: #010203;
+    font-size: 20px;
+    margin: auto;
+  }
+
+  .recent_heading {
+    float: left;
+    width: 40%;
+  }
+
+  .srch_bar {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  
+  }
+
+  .srch_bar input {
+    border: 1px solid #cdcdcd;
+    border-width: 0 0 1px 0;
+    width: 80%;
+    padding: 2px 0 4px 6px;
+    background: none;
+    outline: none;
+  }
+
+  .srch_bar .input-group-addon button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    padding: 0;
+    color: #707070;
+    font-size: 18px;
+  }
+  
+  .srch_bar .input-group-addon {
+    margin: 0 0 0 -27px;
+  }
+
+  .inbox_chat {
+    height: calc(100vh - 60px); /* Adjust height to be the full height minus the header height */
+    overflow-y: scroll;
+    padding-top: 70px; /* Add padding to the top to account for the fixed header */
+
+  }
+
+  .chat_list {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 18px 16px 10px;
+  }
+
+  .chat_people {
+    overflow: hidden;
+    clear: both;
+    display: block;
+    align-items: center;
+  }
+
+  .chat_img {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    float: left;
+    
+    margin-right: 10px; /* Space between image and text */
+  }
+  
+  .chat_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .chat_ib {
+    margin-top: 0; /* Remove the margin top */
+  }
+  
+  .online {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: green;
+    display: inline-block;
+  }
