@@ -6,6 +6,7 @@ import {
   ViewChildren,
   Input,
 } from '@angular/core';
+import { ChatService } from 'src/app/services/chat.service';
 import { scrollToBottom, timeFormater } from 'src/utils/helpers';
 import {
   sampleChatHeaderJson,
@@ -24,6 +25,8 @@ export class ChatWindowComponent implements AfterViewInit {
   @Input() onChatDetailsClick!: (args: any) => void;
   @Input() onMediaClick!: (args: any) => void;
 
+  constructor(private chatService: ChatService) {}
+
   ngAfterViewInit() {
     this.messageItems.changes.subscribe(() => {
       scrollToBottom(this.messageItems);
@@ -40,6 +43,7 @@ export class ChatWindowComponent implements AfterViewInit {
   }
 
   sendMessage(event?: Event) {
+
     const newMessage = {
       userId: '1',
       username: 'You',
@@ -49,6 +53,25 @@ export class ChatWindowComponent implements AfterViewInit {
       type: 'user',
     };
     this.messages = [...this.messages, newMessage];
+    var dto={question:this.messageContent }
+    this.chatService.sendMessage(dto).subscribe({
+      next: (response: any) => {
+
+        const rcvMessage = {
+          userId: '1',
+          username: 'You',
+          content: response.answer,
+          time: timeFormater(new Date().toISOString()),
+          image: '/assets/images/userimg.svg',
+          type: 'sender',
+        };
+        this.messages = [...this.messages, rcvMessage];
+        console.log('Message sent successfully:', response);
+      },
+      error: (error: any) => {
+        console.error('Error sending message:', error);
+      }
+    });
     this.messageContent = '';
     if (event?.type === 'click' || event) {
       const inputField = document.getElementById(
@@ -65,4 +88,7 @@ export class ChatWindowComponent implements AfterViewInit {
   chatDetailsBtnClick() {
     this.onChatDetailsClick && this.onChatDetailsClick(true);
   }
+}
+export interface QnaDto {
+  question?: string;
 }

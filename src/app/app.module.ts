@@ -6,6 +6,7 @@ import { PostLoginModule } from './post-login/post-login.module';
 import { CommonComponentsModule } from './common-components/common-components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';  
+import { ChatService } from './services/chat.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,FormsModule,
     CommonComponentsModule,
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
